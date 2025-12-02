@@ -51,7 +51,7 @@ const ApperFileFieldComponent = ({ config, elementId }) => {
         }
 
         const { ApperFileUploader } = window.ApperSDK;
-        elementIdRef.current = `file-uploader-${elementId}`;
+        elementIdRef.current = elementId;
         
         await ApperFileUploader.FileField.mount(elementIdRef.current, {
           ...config,
