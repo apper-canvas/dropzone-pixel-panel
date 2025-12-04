@@ -135,7 +135,7 @@ const FileUploader = ({ className = "" }) => {
     try {
       // Get files from ApperFileFieldComponent
       const files = await getFiles('file_content_c');
-      
+      console.log("files:",files)
       // Create upload session with files
       const sessionData = {
         Name: `Upload Session ${new Date().toLocaleDateString()}`,
@@ -145,7 +145,7 @@ const FileUploader = ({ className = "" }) => {
         completedCount: 0,
         startedAt: new Date().toISOString()
       };
-
+      console.log("sessionData:", sessionData)
       const session = await uploadFileService.createSession(sessionData);
       
       if (session) {
